@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useCart } from '../../context/CartContext';
-import cardImageUrl from '../../image/chimp.svg';
+import React, {useState, useEffect} from 'react';
+import {useCart} from '../../context/CartContext';
 
 export const ProductItem = ({product}) => {
     const {cart, updateQuantity} = useCart();
@@ -20,22 +19,22 @@ export const ProductItem = ({product}) => {
 
     const handleChange = (e) => {
         let value = e.target.value;
-        
+
         // Разрешаем пустую строку
         if (value === '') {
             setLocalValue('');
             return;
         }
-        
+
         value = parseInt(value);
         if (isNaN(value)) value = 0;
         value = Math.max(0, value);
-        
+
         setLocalValue(value);
         updateQuantity(product.id, value);
     };
 
-        const handleBlur = () => {
+    const handleBlur = () => {
         if (localValue === '' || parseInt(localValue) === 0) {
             updateQuantity(product.id, 0);
         } else {
@@ -46,7 +45,7 @@ export const ProductItem = ({product}) => {
     return (
         <div className="product-card">
             <img
-                src={cardImageUrl}
+                src={product.image_url}
                 alt={product.title}
                 className='product-card__image'
             />
