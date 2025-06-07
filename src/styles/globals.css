@@ -251,7 +251,7 @@ input[type='number']::-webkit-outer-spin-button {
 
 /* Ограничение высоты для свернутого текста */
 .review-content.truncated {
-    max-height: 100px;
+    max-height: max-content;
     overflow: hidden;
     position: relative;
 }
@@ -551,10 +551,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .cart-item__title {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 300px;
+    width: 200px;
 }
 
 .cart-item__total {
@@ -564,18 +561,17 @@ input[type='number']::-webkit-outer-spin-button {
 
 @media (max-width: 480px) {
     .reviews-grid {
-        grid-template-columns: minmax(280px, 1fr);
+        grid-template-columns: 100%;
     }
 
     .order-form {
-        width: 100%;
-        margin: 0 20px;
+        width: 90%;
     }
 
     .product-list {
         display: grid;
         justify-items: center;
-        grid-template-columns: minmax(280px, 1fr);
+        grid-template-columns: 100%;
     }
 
     .product-card {
@@ -599,8 +595,19 @@ input[type='number']::-webkit-outer-spin-button {
         font-size: 26px;
     }
 
+    .cart-item {
+        font-size: 15px;
+    }
+
     .cart-item__title {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         width: 100px;
+    }
+
+    .cart-item__details {
+        min-width: max-content;
     }
 
     .cart-item__total {
@@ -641,7 +648,6 @@ input[type='number']::-webkit-outer-spin-button {
 
     .order-form {
         width: 100%;
-        margin: 0 20px;
     }
 
     .phone-form {
@@ -653,6 +659,6 @@ input[type='number']::-webkit-outer-spin-button {
     }
 
     .cart-item__title {
-        width: 200px;
+        width: 300px;
     }
 }

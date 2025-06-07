@@ -89,7 +89,7 @@ export const CartSummary = ({products = []}) => {
             ))}
           </div>
           
-          <div className="cart-totals">
+          {/* <div className="cart-totals">
             <div className="summary-item">
               <span>Всего товаров:</span>
               <span>{totalItems} шт.</span>
@@ -98,7 +98,7 @@ export const CartSummary = ({products = []}) => {
               <span>Общая сумма:</span>
               <span>{formattedPrice}</span>
             </div>
-          </div>
+          </div> */}
         </>
       )}
     </div>
