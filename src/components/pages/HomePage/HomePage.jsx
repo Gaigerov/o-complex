@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 // Компоненты
 import {Reviews} from '../../Reviews/Reviews';
-import {Header} from '../../Header/Header';
+import {Order} from '../../Order/Order';
 import {PhoneForm} from '../../PhoneForm/PhoneForm';
 import {Popup} from '../../Popup/Popup';
 
@@ -41,7 +41,7 @@ export const HomePage = ({initialReviews, initialProducts, totalProducts, error}
 
                 <section className="section">
                     <div className="order-form">
-                        <Header products={initialProducts || []} />
+                        <Order products={initialProducts || []} />
                         <PhoneForm onSuccess={handleOrderSuccess} />
                     </div>
                 </section>

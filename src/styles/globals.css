@@ -88,9 +88,9 @@ input[type='number']::-webkit-outer-spin-button {
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 80%;
     text-align: center;
     margin: 40px;
+    width: auto;
     padding: 10px;
     font-weight: 400;
     font-size: 96px;
@@ -118,7 +118,7 @@ input[type='number']::-webkit-outer-spin-button {
     height: 100%;
     display: flex;
     flex-direction: column;
-    width: 321px;
+    width: 100%;
 }
 
 .product-card:hover {
@@ -210,6 +210,12 @@ input[type='number']::-webkit-outer-spin-button {
     font-weight: 400;
     font-size: 36px;
     text-align: center;
+}
+
+/* Стили для Попапа */
+.close-button {
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 /* Стили для отзывов */
@@ -528,7 +534,7 @@ input[type='number']::-webkit-outer-spin-button {
 
 @media (max-width: 480px) {
     .reviews-grid {
-        grid-template-columns: minmax(320px, 1fr);
+        grid-template-columns: minmax(280px, 1fr);
     }
 
     .order-form {
@@ -538,12 +544,25 @@ input[type='number']::-webkit-outer-spin-button {
     .product-list {
         display: grid;
         justify-items: center;
-        grid-template-columns: minmax(320px, 1fr);
+        grid-template-columns: minmax(280px, 1fr);
     }
 
     .product-card {
-    width: 321px;
-}
+        width: 100%;
+    }
+
+    .phone-form__inputContainer {
+        width: 100%;
+    }
+
+    .inputPlaceholder {
+        width: 100%;
+        font-size: 26px;
+    }
+    .order-form {
+        width: 100%;
+        margin: 0 20px;
+    }
 }
 
 @media (max-width: 1075px) {

@@ -2,7 +2,7 @@ import React from 'react';
 import { CartSummary } from '../CartSummary/CartSummary';
 import { useCart } from '../../context/CartContext';
 
-export const Header = ({ products = [] }) => {
+export const Order = ({ products = [] }) => {
   const { getCartSummary } = useCart();
 //   const summary = getCartSummary();
   
