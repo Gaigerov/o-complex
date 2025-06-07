@@ -31,15 +31,6 @@ export const CartProvider = ({ children }) => {
     setCart({});
   }, [setCart]);
 
-  // Добавляем вычисление итогов
-  const getCartSummary = useCallback(() => {
-    const totalItems = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
-    return {
-      totalItems,
-      totalPrice: 0 // Цена будет рассчитываться в компоненте при наличии продуктов
-    };
-  }, [cart]);
-
   return (
     <CartContext.Provider value={{ 
       cart: isClient ? cart : {}, // На сервере всегда пустая корзина
