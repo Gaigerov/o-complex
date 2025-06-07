@@ -560,6 +560,19 @@ input[type='number']::-webkit-outer-spin-button {
 /* Адаптивность */
 
 @media (max-width: 480px) {
+    .section-title {
+        display: flex;
+        justify-content: center;
+        text-wrap: wrap;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: center;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
     .reviews-grid {
         grid-template-columns: 100%;
     }
@@ -613,9 +626,13 @@ input[type='number']::-webkit-outer-spin-button {
     .cart-item__total {
         margin-left: 10px;
     }
+
+    .phone-form {
+        flex-direction: column;
+    }
 }
 
-@media (max-width: 1075px) {
+@media (min-width: 480px) and (max-width: 1075px) {
     .product-list {
         display: grid;
         justify-items: center;
