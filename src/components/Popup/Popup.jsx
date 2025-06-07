@@ -21,7 +21,7 @@ export const Popup = ({ isOpen, onClose, message }) => {
         <h2>Заказ оформлен!</h2>
         <p>{message || 'Спасибо за ваш заказ! Наш менеджер свяжется с вами в ближайшее время.'}</p>
         <button className="close-button" onClick={onClose}>
-          Закрыть
+           закрыть
         </button>
       </div>
     </div>
