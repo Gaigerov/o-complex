@@ -20,7 +20,6 @@ export const ProductItem = ({product}) => {
     const handleChange = (e) => {
         let value = e.target.value;
 
-        // Разрешаем пустую строку
         if (value === '') {
             setLocalValue('');
             return;
@@ -37,8 +36,6 @@ export const ProductItem = ({product}) => {
     const handleBlur = () => {
         if (localValue === '' || parseInt(localValue) === 0) {
             updateQuantity(product.id, 0);
-        } else {
-            setLocalValue(quantity); // Синхронизируем с актуальным значением
         }
     };
 
@@ -67,18 +64,24 @@ export const ProductItem = ({product}) => {
                 </button>
             ) : (
                 <div className="quantity-control">
-                    <button className='quantity-button' onClick={() => updateQuantity(product.id, Math.max(1, quantity - 1))}>
+                    <button 
+                        className='quantity-button' 
+                        onClick={() => updateQuantity(product.id, quantity > 1 ? quantity - 1 : 0)}
+                    >
                         -
                     </button>
                     <input
                         type="number"
-                        min="1"
+                        min="0"
                         value={quantity}
                         className='quantity-input'
                         onChange={handleChange}
                         onBlur={handleBlur}
                     />
-                    <button className='quantity-button' onClick={() => updateQuantity(product.id, quantity + 1)}>
+                    <button 
+                        className='quantity-button' 
+                        onClick={() => updateQuantity(product.id, quantity + 1)}
+                    >
                         +
                     </button>
                 </div>
